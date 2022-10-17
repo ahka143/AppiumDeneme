@@ -7,21 +7,16 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.List;
 
-public class AppiumDeneme8 {
+public class AppiumDeneme8 extends TestBaseAndroid{
 
     @Test
     public void test01() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Note8");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0");
-        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
-        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\ahka1\\IdeaProjects\\Appium\\apiDemos.apk");
 
-        AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), capabilities);
+
+        AndroidDriver driver = androidDriver("C:\\Users\\ahka1\\IdeaProjects\\Appium\\apiDemos.apk");
 
         driver.findElement(By.xpath("//android.widget.TextView[@text='API Demos']")).click();
         driver.findElement(By.xpath("//android.widget.TextView[@text='Preference']")).click();
@@ -39,6 +34,8 @@ public class AppiumDeneme8 {
 
         driver.findElement(By.id("android:id/edit")).sendKeys("Test");
         driver.findElement(By.id("android:id/button1")).click();
+
+
 
 driver.quit();
 

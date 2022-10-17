@@ -19,7 +19,7 @@ public class AppiumDeneme6 {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Emulator");
         capabilities.setCapability(MobileCapabilityType.NO_RESET,true);
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
-        capabilities.setCapability("chromedriverExecutable","C:\\Users\\ahka1\\IdeaProjects\\Appium\\driver\\chromedriver.exe");
+        capabilities.setCapability("chromedriverExecutable","C:\\Users\\ahka1\\IdeaProjects\\Appium\\driver\\chromedriver74.exe");
         AndroidDriver driver =new AndroidDriver(new URL("http://localhost:4723/wd/hub"),capabilities);
 
         driver.get("https://www.amazon.com");
